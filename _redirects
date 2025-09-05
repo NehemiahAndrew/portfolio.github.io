@@ -1,0 +1,17 @@
+# Redirect old URLs to new ones
+/home              /               301
+/index             /               301
+/index.htm         /               301
+/portfolio         /#projects      301
+/contact           /#contact       301
+/about             /#about         301
+/services          /#services      301
+/skills            /#skills        301
+/timeline          /#timeline      301
+
+# Handle missing files
+/*                 /index.html     200
+
+# Force HTTPS (handled by Netlify automatically)
+# Force WWW redirect (optional - uncomment if you want www)
+# https://nehemiah-technologies.netlify.app/* https://www.nehemiah-technologies.netlify.app/:splat 301!

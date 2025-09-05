@@ -1,0 +1,72 @@
+<svg width="1200" height="2400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Header -->
+  <rect width="1200" height="80" fill="#1a1a1a"/>
+  <rect x="20" y="20" width="120" height="40" rx="20" fill="url(#grad1)"/>
+  <text x="80" y="45" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold">LOGO</text>
+  
+  <!-- Navigation -->
+  <rect x="200" y="25" width="60" height="30" rx="15" fill="#333"/>
+  <rect x="280" y="25" width="60" height="30" rx="15" fill="#333"/>
+  <rect x="360" y="25" width="60" height="30" rx="15" fill="#333"/>
+  <rect x="440" y="25" width="60" height="30" rx="15" fill="#333"/>
+  
+  <!-- Hero Section -->
+  <rect y="80" width="1200" height="400" fill="#111"/>
+  <text x="600" y="200" text-anchor="middle" fill="white" font-family="Arial" font-size="48" font-weight="bold">Welcome to Our Site</text>
+  <text x="600" y="250" text-anchor="middle" fill="#ccc" font-family="Arial" font-size="18">Professional web development services</text>
+  <rect x="500" y="280" width="200" height="50" rx="25" fill="url(#grad1)"/>
+  <text x="600" y="310" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold">Get Started</text>
+  
+  <!-- Content Sections -->
+  <rect y="480" width="1200" height="300" fill="#f8f9fa"/>
+  <text x="600" y="550" text-anchor="middle" fill="#333" font-family="Arial" font-size="32" font-weight="bold">About Us</text>
+  <text x="600" y="600" text-anchor="middle" fill="#666" font-family="Arial" font-size="16">We create amazing digital experiences</text>
+  
+  <!-- Cards Section -->
+  <rect y="780" width="1200" height="400" fill="#fff"/>
+  <rect x="100" y="850" width="300" height="200" rx="10" fill="#f1f3f4" stroke="#ddd"/>
+  <rect x="450" y="850" width="300" height="200" rx="10" fill="#f1f3f4" stroke="#ddd"/>
+  <rect x="800" y="850" width="300" height="200" rx="10" fill="#f1f3f4" stroke="#ddd"/>
+  
+  <!-- Service Cards -->
+  <text x="250" y="900" text-anchor="middle" fill="#333" font-family="Arial" font-size="18" font-weight="bold">Web Design</text>
+  <text x="600" y="900" text-anchor="middle" fill="#333" font-family="Arial" font-size="18" font-weight="bold">Development</text>
+  <text x="950" y="900" text-anchor="middle" fill="#333" font-family="Arial" font-size="18" font-weight="bold">SEO</text>
+  
+  <!-- Footer -->
+  <rect y="1180" width="1200" height="200" fill="#1a1a1a"/>
+  <text x="600" y="1250" text-anchor="middle" fill="white" font-family="Arial" font-size="16">Contact Us</text>
+  <text x="600" y="1300" text-anchor="middle" fill="#ccc" font-family="Arial" font-size="14">email@example.com | (555) 123-4567</text>
+  
+  <!-- Extended Content for Scrolling -->
+  <rect y="1380" width="1200" height="300" fill="#f0f2f5"/>
+  <text x="600" y="1450" text-anchor="middle" fill="#333" font-family="Arial" font-size="28" font-weight="bold">Our Portfolio</text>
+  
+  <!-- Portfolio Grid -->
+  <rect x="50" y="1500" width="280" height="180" rx="10" fill="#fff" stroke="#ddd"/>
+  <rect x="360" y="1500" width="280" height="180" rx="10" fill="#fff" stroke="#ddd"/>
+  <rect x="670" y="1500" width="280" height="180" rx="10" fill="#fff" stroke="#ddd"/>
+  <rect x="980" y="1500" width="180" height="180" rx="10" fill="#fff" stroke="#ddd"/>
+  
+  <!-- More Content -->
+  <rect y="1720" width="1200" height="300" fill="#fff"/>
+  <text x="600" y="1800" text-anchor="middle" fill="#333" font-family="Arial" font-size="28" font-weight="bold">Client Testimonials</text>
+  
+  <!-- Testimonial Cards -->
+  <rect x="150" y="1850" width="400" height="120" rx="10" fill="#f8f9fa" stroke="#e9ecef"/>
+  <rect x="650" y="1850" width="400" height="120" rx="10" fill="#f8f9fa" stroke="#e9ecef"/>
+  
+  <!-- Final Section -->
+  <rect y="2020" width="1200" height="380" fill="#667eea"/>
+  <text x="600" y="2150" text-anchor="middle" fill="white" font-family="Arial" font-size="36" font-weight="bold">Ready to Start?</text>
+  <text x="600" y="2200" text-anchor="middle" fill="white" font-family="Arial" font-size="18">Let's build something amazing together</text>
+  <rect x="500" y="2240" width="200" height="50" rx="25" fill="white"/>
+  <text x="600" y="2270" text-anchor="middle" fill="#667eea" font-family="Arial" font-size="16" font-weight="bold">Contact Us</text>
+</svg>

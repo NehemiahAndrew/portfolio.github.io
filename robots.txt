@@ -1,0 +1,33 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://nehemiah-technologies.netlify.app/sitemap.xml
+
+# Block access to development files
+Disallow: /*.md
+Disallow: /README.md
+Disallow: /ANALYTICS_SETUP.md
+Disallow: /EMAIL_SETUP_INSTRUCTIONS.md
+Disallow: /LAZY_LOADING_IMPLEMENTATION.md
+Disallow: /PERFORMANCE_OPTIMIZATION_SUMMARY.md
+Disallow: /WEBSITE_IMPROVEMENTS.md
+Disallow: /animation-test.html
+Disallow: /blog-template.md
+Disallow: /photo-instructions.txt
+Disallow: /.github/
+
+# Allow important pages
+Allow: /index.html
+Allow: /blog.html
+Allow: /privacy-policy.html
+Allow: /terms-of-service.html
+Allow: /security.html
+
+# Allow all images and assets
+Allow: /*.jpg
+Allow: /*.png
+Allow: /*.svg
+Allow: /*.css
+Allow: /*.js
+Allow: /*.pdf

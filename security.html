@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Policy - Nehemiah Portfolio</title>
+    <meta name="description" content="Comprehensive security policy and cybersecurity measures for Nehemiah Technologies.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .security-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1f3a 100%);
+            padding-top: 100px;
+            padding-bottom: 80px;
+        }
+
+        .security-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        .security-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .security-title {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #00d4ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .security-subtitle {
+            color: #b0b0b0;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .security-updated {
+            color: #888;
+            font-size: 1rem;
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .security-card {
+            background: linear-gradient(135deg, rgba(25, 25, 40, 0.9), rgba(35, 35, 60, 0.8));
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .security-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00d4ff, #00ff88, #667eea);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .security-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .security-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .security-card-icon {
+            font-size: 2.5rem;
+            color: #00d4ff;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .security-card h3 {
+            color: #ffffff;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .security-card p {
+            color: #b0b0b0;
+            margin-bottom: 15px;
+        }
+
+        .security-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .security-card li {
+            color: #d0d0d0;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .security-card li::before {
+            content: '✓';
+            color: #00ff88;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .security-content h2 {
+            color: #00d4ff;
+            font-size: 2.2rem;
+            margin: 50px 0 25px;
+            text-align: center;
+            border-bottom: 3px solid rgba(0, 212, 255, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .security-content h3 {
+            color: #ffffff;
+            font-size: 1.6rem;
+            margin: 35px 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .security-content h3 i {
+            color: #00d4ff;
+        }
+
+        .security-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .security-content ul {
+            margin: 20px 0 20px 30px;
+        }
+
+        .security-content li {
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .critical-box {
+            background: linear-gradient(135deg, rgba(255, 59, 48, 0.15), rgba(255, 149, 0, 0.1));
+            border: 2px solid #ff3b30;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .critical-box::before {
+            content: '⚠️';
+            font-size: 2rem;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            opacity: 0.6;
+        }
+
+        .security-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .metric-item {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(102, 126, 234, 0.1));
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00ff88;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            color: #b0b0b0;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .incident-response {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 212, 255, 0.1));
+            border: 2px solid #00ff88;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .response-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .response-step {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #00ff88, #00d4ff);
+            color: #0a0e1a;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+        .contact-security {
+            background: linear-gradient(135deg, rgba(25, 25, 40, 0.9), rgba(35, 35, 60, 0.8));
+            border: 2px solid rgba(0, 212, 255, 0.4);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .security-email {
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            color: #0a0e1a;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin: 20px 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+        }
+
+        .security-email:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 212, 255, 0.4);
+        }
+
+        .back-to-portfolio {
+            text-align: center;
+            margin: 50px 0 30px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #00d4ff, #667eea);
+            color: #0a0e1a;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .security-title {
+                font-size: 2.2rem;
+            }
+
+            .security-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .security-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .response-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="security-page">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span>Nehemiah</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="index.html#skills" class="nav-link">Skills</a>
+                    <a href="index.html#projects" class="nav-link">Projects</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="security-container">
+            <div class="security-header">
+                <h1 class="security-title">Security Policy</h1>
+                <p class="security-subtitle">Comprehensive Cybersecurity Framework</p>
+                <p class="security-updated">Last updated: August 26, 2025</p>
+            </div>
+
+            <div class="security-metrics">
+                <div class="metric-item">
+                    <span class="metric-number">99.9%</span>
+                    <span class="metric-label">Uptime Security</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-number">256-bit</span>
+                    <span class="metric-label">AES Encryption</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-number">24/7</span>
+                    <span class="metric-label">Monitoring</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-number">ISO 27001</span>
+                    <span class="metric-label">Compliance</span>
+                </div>
+            </div>
+
+            <div class="security-grid">
+                <div class="security-card">
+                    <i class="fas fa-shield-alt security-card-icon"></i>
+                    <h3>Infrastructure Security</h3>
+                    <p>Enterprise-grade security measures protecting our systems and client data.</p>
+                    <ul>
+                        <li>Multi-layered firewall protection</li>
+                        <li>Intrusion detection and prevention</li>
+                        <li>Network segmentation</li>
+                        <li>DDoS protection and mitigation</li>
+                        <li>Zero-trust architecture</li>
+                    </ul>
+                </div>
+
+                <div class="security-card">
+                    <i class="fas fa-lock security-card-icon"></i>
+                    <h3>Data Encryption</h3>
+                    <p>Advanced encryption protocols for data at rest and in transit.</p>
+                    <ul>
+                        <li>AES-256 encryption standard</li>
+                        <li>TLS 1.3 for data transmission</li>
+                        <li>End-to-end encryption</li>
+                        <li>Key management system</li>
+                        <li>Perfect forward secrecy</li>
+                    </ul>
+                </div>
+
+                <div class="security-card">
+                    <i class="fas fa-user-shield security-card-icon"></i>
+                    <h3>Access Control</h3>
+                    <p>Strict authentication and authorization mechanisms.</p>
+                    <ul>
+                        <li>Multi-factor authentication</li>
+                        <li>Role-based access control</li>
+                        <li>Privileged access management</li>
+                        <li>Session management</li>
+                        <li>Regular access reviews</li>
+                    </ul>
+                </div>
+
+                <div class="security-card">
+                    <i class="fas fa-search security-card-icon"></i>
+                    <h3>Monitoring & Detection</h3>
+                    <p>Continuous monitoring and threat detection capabilities.</p>
+                    <ul>
+                        <li>Security Information and Event Management (SIEM)</li>
+                        <li>Real-time threat intelligence</li>
+                        <li>Behavioral analysis</li>
+                        <li>Automated incident response</li>
+                        <li>Log analysis and correlation</li>
+                    </ul>
+                </div>
+
+                <div class="security-card">
+                    <i class="fas fa-bug security-card-icon"></i>
+                    <h3>Vulnerability Management</h3>
+                    <p>Proactive identification and remediation of security vulnerabilities.</p>
+                    <ul>
+                        <li>Regular security assessments</li>
+                        <li>Penetration testing</li>
+                        <li>Automated vulnerability scanning</li>
+                        <li>Patch management</li>
+                        <li>Security code review</li>
+                    </ul>
+                </div>
+
+                <div class="security-card">
+                    <i class="fas fa-graduation-cap security-card-icon"></i>
+                    <h3>Security Awareness</h3>
+                    <p>Comprehensive security training and awareness programs.</p>
+                    <ul>
+                        <li>Security training programs</li>
+                        <li>Phishing simulation</li>
+                        <li>Security policies and procedures</li>
+                        <li>Incident reporting procedures</li>
+                        <li>Regular security updates</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="security-content">
+                <h2>🔐 Core Security Principles</h2>
+
+                <h3><i class="fas fa-balance-scale"></i> Confidentiality, Integrity, and Availability (CIA Triad)</h3>
+                <p>Our security framework is built on the fundamental principles of the CIA triad:</p>
+                <ul>
+                    <li><strong>Confidentiality:</strong> Ensuring that sensitive information is accessible only to authorized individuals through encryption, access controls, and data classification.</li>
+                    <li><strong>Integrity:</strong> Maintaining the accuracy and completeness of data through checksums, digital signatures, and version control systems.</li>
+                    <li><strong>Availability:</strong> Ensuring that systems and data are accessible when needed through redundancy, backup systems, and disaster recovery plans.</li>
+                </ul>
+
+                <h3><i class="fas fa-shield-virus"></i> Defense in Depth</h3>
+                <p>We implement multiple layers of security controls to protect against various threat vectors:</p>
+                <ul>
+                    <li><strong>Perimeter Security:</strong> Firewalls, intrusion prevention systems, and network access controls</li>
+                    <li><strong>Network Security:</strong> Network segmentation, VPNs, and network monitoring</li>
+                    <li><strong>Host Security:</strong> Endpoint protection, antivirus, and host-based intrusion detection</li>
+                    <li><strong>Application Security:</strong> Secure coding practices, input validation, and application firewalls</li>
+                    <li><strong>Data Security:</strong> Encryption, data loss prevention, and backup systems</li>
+                    <li><strong>Physical Security:</strong> Access controls, surveillance, and environmental protections</li>
+                </ul>
+
+                <h2>🚨 Incident Response Plan</h2>
+
+                <div class="incident-response">
+                    <h3>24/7 Incident Response Team</h3>
+                    <p>Our dedicated incident response team follows a structured approach to handle security incidents effectively:</p>
+                    
+                    <div class="response-steps">
+                        <div class="response-step">
+                            <div class="step-number">1</div>
+                            <h4>Detection</h4>
+                            <p>Identify and classify security incidents through monitoring systems and threat intelligence.</p>
+                        </div>
+                        <div class="response-step">
+                            <div class="step-number">2</div>
+                            <h4>Containment</h4>
+                            <p>Isolate affected systems to prevent further damage and preserve evidence.</p>
+                        </div>
+                        <div class="response-step">
+                            <div class="step-number">3</div>
+                            <h4>Investigation</h4>
+                            <p>Conduct thorough forensic analysis to determine the scope and impact of the incident.</p>
+                        </div>
+                        <div class="response-step">
+                            <div class="step-number">4</div>
+                            <h4>Eradication</h4>
+                            <p>Remove threats and vulnerabilities from the environment.</p>
+                        </div>
+                        <div class="response-step">
+                            <div class="step-number">5</div>
+                            <h4>Recovery</h4>
+                            <p>Restore systems and services to normal operations with enhanced security measures.</p>
+                        </div>
+                        <div class="response-step">
+                            <div class="step-number">6</div>
+                            <h4>Lessons Learned</h4>
+                            <p>Document findings and improve security controls to prevent similar incidents.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>🔍 Compliance and Standards</h2>
+
+                <h3><i class="fas fa-certificate"></i> Industry Standards</h3>
+                <p>We adhere to internationally recognized security standards and frameworks:</p>
+                <ul>
+                    <li><strong>ISO 27001:</strong> Information Security Management System certification</li>
+                    <li><strong>NIST Cybersecurity Framework:</strong> Comprehensive cybersecurity risk management</li>
+                    <li><strong>OWASP Top 10:</strong> Web application security best practices</li>
+                    <li><strong>PCI DSS:</strong> Payment card industry data security standards</li>
+                    <li><strong>GDPR:</strong> General Data Protection Regulation compliance</li>
+                    <li><strong>SOC 2 Type II:</strong> Service Organization Control audit standards</li>
+                </ul>
+
+                <h3><i class="fas fa-gavel"></i> Regulatory Compliance</h3>
+                <p>Our security practices comply with various regulatory requirements:</p>
+                <ul>
+                    <li>Data protection and privacy laws</li>
+                    <li>Financial services regulations</li>
+                    <li>Healthcare data protection (HIPAA)</li>
+                    <li>Government security standards</li>
+                    <li>Industry-specific compliance requirements</li>
+                </ul>
+
+                <h2>🛡️ Security Testing and Validation</h2>
+
+                <h3><i class="fas fa-vial"></i> Regular Security Assessments</h3>
+                <p>We conduct comprehensive security testing to validate our security controls:</p>
+                <ul>
+                    <li><strong>Penetration Testing:</strong> Quarterly external and internal penetration tests</li>
+                    <li><strong>Vulnerability Assessments:</strong> Weekly automated scans and monthly manual reviews</li>
+                    <li><strong>Security Code Review:</strong> Static and dynamic application security testing</li>
+                    <li><strong>Red Team Exercises:</strong> Simulated advanced persistent threat scenarios</li>
+                    <li><strong>Third-Party Audits:</strong> Independent security assessments and certifications</li>
+                </ul>
+
+                <h3><i class="fas fa-tools"></i> Security Tools and Technologies</h3>
+                <p>We utilize industry-leading security tools and technologies:</p>
+                <ul>
+                    <li>Security Information and Event Management (SIEM) platforms</li>
+                    <li>Endpoint Detection and Response (EDR) solutions</li>
+                    <li>Network Traffic Analysis (NTA) tools</li>
+                    <li>Vulnerability management platforms</li>
+                    <li>Threat intelligence feeds and analysis tools</li>
+                    <li>Digital forensics and incident response tools</li>
+                </ul>
+
+                <h2>📋 Security Policies and Procedures</h2>
+
+                <h3><i class="fas fa-file-alt"></i> Documented Security Policies</h3>
+                <p>Our comprehensive security policy framework includes:</p>
+                <ul>
+                    <li><strong>Information Security Policy:</strong> Overarching security governance and principles</li>
+                    <li><strong>Access Control Policy:</strong> User access management and authorization procedures</li>
+                    <li><strong>Data Classification Policy:</strong> Data handling and protection requirements</li>
+                    <li><strong>Incident Response Policy:</strong> Security incident handling procedures</li>
+                    <li><strong>Business Continuity Policy:</strong> Disaster recovery and business continuity planning</li>
+                    <li><strong>Vendor Security Policy:</strong> Third-party security requirements and assessments</li>
+                </ul>
+
+                <h3><i class="fas fa-sync-alt"></i> Continuous Improvement</h3>
+                <p>We continuously enhance our security posture through:</p>
+                <ul>
+                    <li>Regular policy reviews and updates</li>
+                    <li>Security metrics and KPI tracking</li>
+                    <li>Threat landscape analysis</li>
+                    <li>Security awareness training programs</li>
+                    <li>Industry best practice adoption</li>
+                    <li>Feedback from security assessments and incidents</li>
+                </ul>
+
+                <div class="critical-box">
+                    <h3>Critical Security Notice</h3>
+                    <p><strong>Zero Tolerance for Security Breaches:</strong> We maintain a zero-tolerance policy for security incidents and continuously monitor for threats.</p>
+                    <p><strong>Immediate Response:</strong> Any suspected security incident is immediately escalated to our incident response team and addressed within minutes.</p>
+                    <p><strong>Client Notification:</strong> Clients are notified immediately of any security incidents that may affect their data or services.</p>
+                </div>
+
+                <h2>🚀 Future Security Initiatives</h2>
+
+                <h3><i class="fas fa-rocket"></i> Emerging Technologies</h3>
+                <p>We are actively implementing next-generation security technologies:</p>
+                <ul>
+                    <li><strong>Artificial Intelligence and Machine Learning:</strong> AI-powered threat detection and response</li>
+                    <li><strong>Zero Trust Architecture:</strong> Never trust, always verify security model</li>
+                    <li><strong>Quantum-Resistant Cryptography:</strong> Preparing for post-quantum cryptographic standards</li>
+                    <li><strong>Secure Multi-Party Computation:</strong> Privacy-preserving data analysis techniques</li>
+                    <li><strong>Blockchain Security:</strong> Distributed ledger technology for data integrity</li>
+                </ul>
+
+                <div class="contact-security">
+                    <h3>🔒 Security Contact Information</h3>
+                    <p>For security-related inquiries, vulnerabilities, or incidents, please contact our security team:</p>
+                    
+                    <div style="margin: 30px 0;">
+                        <a href="mailto:nehemiahandrew1@gmail.com?subject=Security%20Inquiry" class="security-email">
+                            <i class="fas fa-shield-alt"></i> Security Team
+                        </a>
+                        <a href="mailto:nehemiahandrew1@gmail.com?subject=Vulnerability%20Report" class="security-email">
+                            <i class="fas fa-bug"></i> Report Vulnerability
+                        </a>
+                        <a href="mailto:nehemiahandrew1@gmail.com?subject=Security%20Incident" class="security-email">
+                            <i class="fas fa-exclamation-triangle"></i> Report Incident
+                        </a>
+                    </div>
+
+                    <p><strong>Response Time:</strong> Critical security issues are addressed within 1 hour, non-critical issues within 24 hours.</p>
+                    <p><strong>Emergency Contact:</strong> For urgent security incidents, include "URGENT" in the subject line.</p>
+                </div>
+
+                <div class="back-to-portfolio">
+                    <a href="index.html" class="back-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Portfolio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
