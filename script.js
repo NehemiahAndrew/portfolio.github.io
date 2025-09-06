@@ -106,6 +106,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Utility: Close the mobile menu safely
+function closeMobileMenu() {
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    if (navMenu) navMenu.classList.remove('active');
+    if (navToggle) navToggle.classList.remove('active');
+    document.body.classList.remove('nav-open');
+}
+
 // ===== NAVIGATION FUNCTIONALITY =====
 function initializeNavigation() {
     try {
@@ -127,8 +136,12 @@ function initializeNavigation() {
         
         // Close mobile menu when clicking outside
         document.addEventListener('click', function(e) {
+            const navMenu = document.getElementById('nav-menu');
+            const navToggle = document.getElementById('nav-toggle');
             if (navMenu && navMenu.classList.contains('active')) {
-                if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                const clickedInsideMenu = navMenu.contains(e.target);
+                const clickedToggle = navToggle && navToggle.contains(e.target);
+                if (!clickedInsideMenu && !clickedToggle) {
                     closeMobileMenu();
                 }
             }
