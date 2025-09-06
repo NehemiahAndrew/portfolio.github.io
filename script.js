@@ -370,17 +370,17 @@ function initializePortfolioAnimations() {
                 // Force reflow
                 portfolioImage.offsetHeight;
                 
-                // Start the scroll animation
-                portfolioImage.style.animation = 'portfolioAutoScroll 8s linear infinite';
+                // Start the scroll animation (match desktop duration)
+                portfolioImage.style.animation = 'portfolioAutoScroll 15s linear infinite';
                 portfolioImage.style.willChange = 'object-position';
                 
-                // Auto-stop after 8 seconds
+                // Auto-stop after 15 seconds
                 setTimeout(() => {
                     portfolioImage.style.animation = 'none';
                     portfolioImage.style.objectPosition = 'center top';
                     portfolioImage.style.willChange = 'auto';
                     console.log('📱 Auto-scroll completed');
-                }, 8000);
+                }, 15000);
             }
             
             function handleTouchStart(e) {
@@ -435,13 +435,13 @@ function initializePortfolioAnimations() {
                 }
             }
             
-            // SIMPLIFIED - Just click to auto-scroll, no complications
-            portfolioImage.addEventListener('click', simpleAutoScroll, { passive: false });
-            item.addEventListener('click', simpleAutoScroll, { passive: false });
-            
-            // Touch events for mobile
-            portfolioImage.addEventListener('touchend', simpleAutoScroll, { passive: false });
-            item.addEventListener('touchend', simpleAutoScroll, { passive: false });
+            // SIMPLIFIED - Mobile: tap to auto-scroll
+            if (hasTouch) {
+                portfolioImage.addEventListener('click', simpleAutoScroll, { passive: false });
+                item.addEventListener('click', simpleAutoScroll, { passive: false });
+                portfolioImage.addEventListener('touchend', simpleAutoScroll, { passive: false });
+                item.addEventListener('touchend', simpleAutoScroll, { passive: false });
+            }
             
             // Also keep hover for desktop convenience (but don't auto-start, just enable interaction)
             if (!hasTouch && !isSmallScreen) {
@@ -526,18 +526,18 @@ function initializePortfolioAnimations() {
                 }
             }
             
-            // Add event listeners for ALL devices
+            // Add event listeners for touch devices
             if (hasTouch) {
                 // Touch-enabled devices (phones, tablets, touch laptops)
                 portfolioImage.addEventListener('touchstart', handleTouchStart, { passive: false });
                 portfolioImage.addEventListener('touchend', handleTouchEnd, { passive: false });
                 item.addEventListener('touchstart', handleTouchStart, { passive: false });
                 item.addEventListener('touchend', handleTouchEnd, { passive: false });
+            } else {
+                // Desktop: allow click to toggle as an alternative to hover
+                portfolioImage.addEventListener('click', handleUniversalInteraction, { passive: false });
+                item.addEventListener('click', handleUniversalInteraction, { passive: false });
             }
-            
-            // Click events for ALL devices (mouse and touch)
-            portfolioImage.addEventListener('click', handleUniversalInteraction, { passive: false });
-            item.addEventListener('click', handleUniversalInteraction, { passive: false });
             
             // Also keep hover for desktop convenience (but don't auto-start, just enable interaction)
             if (!hasTouch) {
