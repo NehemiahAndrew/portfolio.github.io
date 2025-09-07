@@ -1,0 +1,83 @@
+name: IndexNow Submit
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  submit-indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build URL list
+        id: build
+        shell: bash
+        run: |
+          set -e
+          HOST="nehemiah.is-a.dev"
+          KEY="a2369399fa2c4acf9d5367e55f622722"
+          KEY_LOCATION="https://nehemiah.is-a.dev/a2369399fa2c4acf9d5367e55f622722.txt"
+          BEFORE=${{ github.event.before }}
+          SHA=${{ github.sha }}
+
+          # Determine changed files; fallback to all tracked files on first push
+          if [ -n "$BEFORE" ] && [ "$BEFORE" != "0000000000000000000000000000000000000000" ]; then
+            CHANGED=$(git --no-pager diff --name-only "$BEFORE" "$SHA" | tr -d '\r')
+          else
+            CHANGED=$(git ls-files)
+          fi
+
+          URLS=()
+          while IFS= read -r file; do
+            case "$file" in
+              index.html)
+                URLS+=("https://$HOST/")
+                ;;
+              *.html)
+                URLS+=("https://$HOST/$file")
+                ;;
+              sitemap.xml)
+                URLS+=("https://$HOST/sitemap.xml")
+                ;;
+            esac
+          done <<< "$CHANGED"
+
+          # Ensure at least homepage is submitted
+          if [ ${#URLS[@]} -eq 0 ]; then
+            URLS=("https://$HOST/")
+          fi
+
+          # Create JSON payload
+          printf '{\n' > payload.json
+          printf '  "host": "%s",\n' "$HOST" >> payload.json
+          printf '  "key": "%s",\n' "$KEY" >> payload.json
+          printf '  "keyLocation": "%s",\n' "$KEY_LOCATION" >> payload.json
+          printf '  "urlList": [\n' >> payload.json
+
+          for i in "${!URLS[@]}"; do
+            url="${URLS[$i]}"
+            if [ $i -gt 0 ]; then
+              printf ',\n' >> payload.json
+            fi
+            printf '    "%s"' "$url" >> payload.json
+          done
+          printf '\n  ]\n}\n' >> payload.json
+
+          echo "Payload to submit:" 
+          cat payload.json
+
+      - name: Submit to IndexNow (Aggregator)
+        shell: bash
+        run: |
+          curl -sS -X POST -H "Content-Type: application/json; charset=utf-8" \
+            --data-binary @payload.json https://api.indexnow.org/indexnow \
+            -w "\nHTTP %{http_code}\n"
+
+      - name: Submit to Bing IndexNow
+        shell: bash
+        run: |
+          curl -sS -X POST -H "Content-Type: application/json; charset=utf-8" \
+            --data-binary @payload.json https://www.bing.com/indexnow \
+            -w "\nHTTP %{http_code}\n"
