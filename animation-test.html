@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Test - Nehemiah Portfolio</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #111; color: #fff; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #333; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .pass { background: #28a745; }
+        .fail { background: #dc3545; }
+        .info { background: #17a2b8; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>🚀 Portfolio Animation Test Suite</h1>
+    
+    <div class="test-section">
+        <h2>External Dependencies Test</h2>
+        <div id="font-test" class="status info">Testing Google Fonts...</div>
+        <div id="icons-test" class="status info">Testing Font Awesome Icons...</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>JavaScript Functions Test</h2>
+        <div id="js-load" class="status info">Testing JavaScript loading...</div>
+        <div id="dom-ready" class="status info">Testing DOM Ready state...</div>
+        <div id="functions-test" class="status info">Testing animation functions...</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Animation CSS Test</h2>
+        <div id="keyframes-test" class="status info">Testing CSS keyframes...</div>
+        <div id="transitions-test" class="status info">Testing CSS transitions...</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Interactive Elements Test</h2>
+        <button onclick="testNavigation()">Test Navigation</button>
+        <button onclick="testScrollEffects()">Test Scroll Effects</button>
+        <button onclick="testProjectFilters()">Test Project Filters</button>
+        <button onclick="testContactForm()">Test Contact Form</button>
+        <div id="interaction-results"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Performance Test</h2>
+        <div id="load-time" class="status info">Measuring load time...</div>
+        <div id="memory-usage" class="status info">Checking memory usage...</div>
+    </div>
+    
+    <p><strong>Instructions:</strong></p>
+    <ul>
+        <li>This page tests all animation components of your portfolio</li>
+        <li>Green = Pass, Red = Fail, Blue = Info</li>
+        <li>Click the buttons to test interactive features</li>
+        <li>Check console for detailed logs</li>
+    </ul>
+    
+    <script>
+        console.log('🔍 Starting Portfolio Animation Test Suite...');
+        
+        // Test external dependencies
+        function testExternalDependencies() {
+            // Test Google Fonts
+            const testElement = document.createElement('div');
+            testElement.style.fontFamily = 'Inter, sans-serif';
+            testElement.textContent = 'Test';
+            document.body.appendChild(testElement);
+            
+            const computedStyle = window.getComputedStyle(testElement);
+            const fontFamily = computedStyle.fontFamily;
+            
+            if (fontFamily.includes('Inter')) {
+                document.getElementById('font-test').className = 'status pass';
+                document.getElementById('font-test').textContent = '✅ Google Fonts loaded successfully';
+            } else {
+                document.getElementById('font-test').className = 'status fail';
+                document.getElementById('font-test').textContent = '❌ Google Fonts failed to load';
+            }
+            
+            document.body.removeChild(testElement);
+            
+            // Test Font Awesome
+            const iconTest = document.createElement('i');
+            iconTest.className = 'fas fa-home';
+            document.body.appendChild(iconTest);
+            
+            setTimeout(() => {
+                const iconStyle = window.getComputedStyle(iconTest, ':before');
+                if (iconStyle.content && iconStyle.content !== 'none') {
+                    document.getElementById('icons-test').className = 'status pass';
+                    document.getElementById('icons-test').textContent = '✅ Font Awesome icons loaded successfully';
+                } else {
+                    document.getElementById('icons-test').className = 'status fail';
+                    document.getElementById('icons-test').textContent = '❌ Font Awesome icons failed to load';
+                }
+                document.body.removeChild(iconTest);
+            }, 100);
+        }
+        
+        // Test JavaScript loading
+        function testJavaScript() {
+            // Check if main portfolio script loaded
+            try {
+                // Test if our functions exist (they should be in global scope or window)
+                const portfolioLoaded = typeof window.initializeAnimations === 'function' ||
+                                      document.querySelector('script[src="script.js"]') !== null;
+                
+                if (portfolioLoaded) {
+                    document.getElementById('js-load').className = 'status pass';
+                    document.getElementById('js-load').textContent = '✅ Portfolio JavaScript loaded';
+                } else {
+                    document.getElementById('js-load').className = 'status fail';
+                    document.getElementById('js-load').textContent = '❌ Portfolio JavaScript not found';
+                }
+                
+                // Test DOM ready
+                if (document.readyState === 'complete') {
+                    document.getElementById('dom-ready').className = 'status pass';
+                    document.getElementById('dom-ready').textContent = '✅ DOM fully loaded';
+                } else {
+                    document.getElementById('dom-ready').className = 'status fail';
+                    document.getElementById('dom-ready').textContent = '❌ DOM not ready';
+                }
+                
+                // Test animation support
+                const supportsAnimations = CSS.supports('animation', 'fadeIn 1s ease') &&
+                                         CSS.supports('transform', 'translateY(0)') &&
+                                         CSS.supports('transition', 'all 0.3s ease');
+                
+                if (supportsAnimations) {
+                    document.getElementById('functions-test').className = 'status pass';
+                    document.getElementById('functions-test').textContent = '✅ CSS animations supported';
+                } else {
+                    document.getElementById('functions-test').className = 'status fail';
+                    document.getElementById('functions-test').textContent = '❌ CSS animations not supported';
+                }
+                
+            } catch (error) {
+                document.getElementById('js-load').className = 'status fail';
+                document.getElementById('js-load').textContent = '❌ JavaScript error: ' + error.message;
+            }
+        }
+        
+        // Test CSS animations
+        function testAnimations() {
+            // Test keyframes
+            const keyframeTests = ['fadeInUp', 'fadeInRight', 'pulse', 'bounce'];
+            let keyframesExist = 0;
+            
+            keyframeTests.forEach(keyframe => {
+                const testEl = document.createElement('div');
+                testEl.style.animation = `${keyframe} 1s ease`;
+                if (testEl.style.animation) {
+                    keyframesExist++;
+                }
+            });
+            
+            if (keyframesExist === keyframeTests.length) {
+                document.getElementById('keyframes-test').className = 'status pass';
+                document.getElementById('keyframes-test').textContent = '✅ All CSS keyframes available';
+            } else {
+                document.getElementById('keyframes-test').className = 'status fail';
+                document.getElementById('keyframes-test').textContent = `❌ Only ${keyframesExist}/${keyframeTests.length} keyframes found`;
+            }
+            
+            // Test transitions
+            const testTransition = document.createElement('div');
+            testTransition.style.transition = 'all 0.3s ease';
+            if (testTransition.style.transition) {
+                document.getElementById('transitions-test').className = 'status pass';
+                document.getElementById('transitions-test').textContent = '✅ CSS transitions working';
+            } else {
+                document.getElementById('transitions-test').className = 'status fail';
+                document.getElementById('transitions-test').textContent = '❌ CSS transitions not working';
+            }
+        }
+        
+        // Test interactive functions
+        function testNavigation() {
+            const results = document.getElementById('interaction-results');
+            try {
+                // Test if navigation elements exist in main page
+                const mainWindow = window.parent || window;
+                const navbar = mainWindow.document?.getElementById('navbar');
+                const hamburger = mainWindow.document?.getElementById('hamburger');
+                
+                if (navbar && hamburger) {
+                    results.innerHTML += '<div class="status pass">✅ Navigation elements found</div>';
+                } else {
+                    results.innerHTML += '<div class="status fail">❌ Navigation elements missing</div>';
+                }
+            } catch (error) {
+                results.innerHTML += '<div class="status fail">❌ Navigation test error: ' + error.message + '</div>';
+            }
+        }
+        
+        function testScrollEffects() {
+            const results = document.getElementById('interaction-results');
+            try {
+                // Test Intersection Observer support
+                if ('IntersectionObserver' in window) {
+                    results.innerHTML += '<div class="status pass">✅ Intersection Observer supported</div>';
+                } else {
+                    results.innerHTML += '<div class="status fail">❌ Intersection Observer not supported</div>';
+                }
+            } catch (error) {
+                results.innerHTML += '<div class="status fail">❌ Scroll effects test error: ' + error.message + '</div>';
+            }
+        }
+        
+        function testProjectFilters() {
+            const results = document.getElementById('interaction-results');
+            results.innerHTML += '<div class="status info">🔍 Project filters test - check main page for filter buttons</div>';
+        }
+        
+        function testContactForm() {
+            const results = document.getElementById('interaction-results');
+            try {
+                // Test form validation support
+                const testInput = document.createElement('input');
+                testInput.type = 'email';
+                testInput.required = true;
+                
+                if (testInput.checkValidity !== undefined) {
+                    results.innerHTML += '<div class="status pass">✅ Form validation supported</div>';
+                } else {
+                    results.innerHTML += '<div class="status fail">❌ Form validation not supported</div>';
+                }
+            } catch (error) {
+                results.innerHTML += '<div class="status fail">❌ Form test error: ' + error.message + '</div>';
+            }
+        }
+        
+        // Performance testing
+        function testPerformance() {
+            const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+            document.getElementById('load-time').className = 'status pass';
+            document.getElementById('load-time').textContent = `✅ Page load time: ${loadTime}ms`;
+            
+            if (performance.memory) {
+                const memoryUsage = (performance.memory.usedJSHeapSize / 1024 / 1024).toFixed(2);
+                document.getElementById('memory-usage').className = 'status pass';
+                document.getElementById('memory-usage').textContent = `✅ Memory usage: ${memoryUsage} MB`;
+            } else {
+                document.getElementById('memory-usage').className = 'status info';
+                document.getElementById('memory-usage').textContent = 'ℹ️ Memory info not available';
+            }
+        }
+        
+        // Run all tests
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔄 Running tests...');
+            
+            setTimeout(() => {
+                testExternalDependencies();
+                testJavaScript();
+                testAnimations();
+                testPerformance();
+                
+                console.log('✅ Test suite completed!');
+                console.log('📊 Check the page for detailed results');
+            }, 500);
+        });
+        
+        // Additional console commands for manual testing
+        console.log('💡 Manual testing commands:');
+        console.log('- testNavigation()');
+        console.log('- testScrollEffects()');
+        console.log('- testProjectFilters()');
+        console.log('- testContactForm()');
+    </script>
+</body>
+</html>

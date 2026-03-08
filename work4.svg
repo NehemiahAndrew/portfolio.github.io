@@ -1,0 +1,145 @@
+<svg width="1200" height="2400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Header -->
+  <rect width="1200" height="80" fill="#1e3a8a"/>
+  <text x="60" y="50" fill="white" font-family="Arial" font-size="24" font-weight="bold">TechCorp</text>
+  
+  <!-- Navigation -->
+  <rect x="200" y="25" width="80" height="30" rx="15" fill="#3b82f6"/>
+  <rect x="300" y="25" width="80" height="30" rx="15" fill="#3b82f6"/>
+  <rect x="400" y="25" width="80" height="30" rx="15" fill="#3b82f6"/>
+  <rect x="500" y="25" width="80" height="30" rx="15" fill="#3b82f6"/>
+  
+  <!-- User Profile -->
+  <circle cx="1050" cy="40" r="20" fill="white"/>
+  <text x="1050" y="45" text-anchor="middle" fill="#1e3a8a" font-family="Arial" font-size="12" font-weight="bold">JS</text>
+  
+  <!-- Hero Section -->
+  <rect y="80" width="1200" height="420" fill="url(#grad4)"/>
+  <text x="600" y="220" text-anchor="middle" fill="white" font-family="Arial" font-size="52" font-weight="bold">Enterprise Solutions</text>
+  <text x="600" y="260" text-anchor="middle" fill="white" font-family="Arial" font-size="20">Scalable technology for growing businesses</text>
+  <rect x="480" y="300" width="240" height="50" rx="25" fill="white"/>
+  <text x="600" y="330" text-anchor="middle" fill="#1e3a8a" font-family="Arial" font-size="16" font-weight="bold">Schedule Demo</text>
+  
+  <!-- Features Section -->
+  <rect y="500" width="1200" height="400" fill="#f8fafc"/>
+  <text x="600" y="560" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="36" font-weight="bold">Platform Features</text>
+  
+  <!-- Feature Grid -->
+  <rect x="100" y="600" width="320" height="250" rx="12" fill="white" stroke="#e2e8f0"/>
+  <rect x="440" y="600" width="320" height="250" rx="12" fill="white" stroke="#e2e8f0"/>
+  <rect x="780" y="600" width="320" height="250" rx="12" fill="white" stroke="#e2e8f0"/>
+  
+  <!-- Feature Icons -->
+  <rect x="240" y="640" width="40" height="40" rx="8" fill="#3b82f6"/>
+  <rect x="580" y="640" width="40" height="40" rx="8" fill="#10b981"/>
+  <rect x="920" y="640" width="40" height="40" rx="8" fill="#f59e0b"/>
+  
+  <!-- Feature Titles -->
+  <text x="260" y="720" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="20" font-weight="bold">Cloud Analytics</text>
+  <text x="600" y="720" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="20" font-weight="bold">Real-time Data</text>
+  <text x="940" y="720" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="20" font-weight="bold">AI Insights</text>
+  
+  <!-- Feature Descriptions -->
+  <text x="260" y="750" text-anchor="middle" fill="#64748b" font-family="Arial" font-size="14">Advanced cloud-based</text>
+  <text x="260" y="770" text-anchor="middle" fill="#64748b" font-family="Arial" font-size="14">analytics platform</text>
+  <text x="600" y="750" text-anchor="middle" fill="#64748b" font-family="Arial" font-size="14">Live data streaming</text>
+  <text x="600" y="770" text-anchor="middle" fill="#64748b" font-family="Arial" font-size="14">and processing</text>
+  <text x="940" y="750" text-anchor="middle" fill="#64748b" font-family="Arial" font-size="14">Machine learning</text>
+  <text x="940" y="770" text-anchor="middle" fill="#64748b" font-family="Arial" font-size="14">powered insights</text>
+  
+  <!-- Dashboard Preview -->
+  <rect y="900" width="1200" height="500" fill="#1e293b"/>
+  <text x="600" y="960" text-anchor="middle" fill="white" font-family="Arial" font-size="32" font-weight="bold">Dashboard Preview</text>
+  
+  <!-- Mock Dashboard -->
+  <rect x="100" y="1000" width="1000" height="350" rx="10" fill="#0f172a" stroke="#334155"/>
+  
+  <!-- Dashboard Header -->
+  <rect x="100" y="1000" width="1000" height="60" rx="10" fill="#1e293b"/>
+  <text x="130" y="1040" fill="white" font-family="Arial" font-size="18" font-weight="bold">Analytics Dashboard</text>
+  
+  <!-- Dashboard Cards -->
+  <rect x="130" y="1080" width="200" height="120" rx="8" fill="#334155"/>
+  <rect x="350" y="1080" width="200" height="120" rx="8" fill="#334155"/>
+  <rect x="570" y="1080" width="200" height="120" rx="8" fill="#334155"/>
+  <rect x="790" y="1080" width="200" height="120" rx="8" fill="#334155"/>
+  
+  <!-- Dashboard Metrics -->
+  <text x="230" y="1110" text-anchor="middle" fill="#3b82f6" font-family="Arial" font-size="24" font-weight="bold">15.2K</text>
+  <text x="450" y="1110" text-anchor="middle" fill="#10b981" font-family="Arial" font-size="24" font-weight="bold">98.5%</text>
+  <text x="670" y="1110" text-anchor="middle" fill="#f59e0b" font-family="Arial" font-size="24" font-weight="bold">$2.4M</text>
+  <text x="890" y="1110" text-anchor="middle" fill="#ef4444" font-family="Arial" font-size="24" font-weight="bold">2.3s</text>
+  
+  <text x="230" y="1140" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">Active Users</text>
+  <text x="450" y="1140" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">Uptime</text>
+  <text x="670" y="1140" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">Revenue</text>
+  <text x="890" y="1140" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">Response Time</text>
+  
+  <!-- Chart Area -->
+  <rect x="130" y="1220" width="860" height="110" rx="5" fill="#475569"/>
+  
+  <!-- Chart Lines -->
+  <path d="M150 1280 L200 1260 L250 1240 L300 1250 L350 1230 L400 1210 L450 1200 L500 1190 L550 1200 L600 1180 L650 1170 L700 1160 L750 1150 L800 1140 L850 1130 L900 1120 L950 1110" 
+        stroke="#3b82f6" stroke-width="3" fill="none"/>
+  
+  <!-- Testimonials -->
+  <rect y="1400" width="1200" height="350" fill="#f1f5f9"/>
+  <text x="600" y="1460" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="32" font-weight="bold">Client Success Stories</text>
+  
+  <!-- Testimonial Cards -->
+  <rect x="150" y="1500" width="300" height="180" rx="10" fill="white" stroke="#e2e8f0"/>
+  <rect x="450" y="1500" width="300" height="180" rx="10" fill="white" stroke="#e2e8f0"/>
+  <rect x="750" y="1500" width="300" height="180" rx="10" fill="white" stroke="#e2e8f0"/>
+  
+  <!-- Testimonial Quotes -->
+  <text x="300" y="1540" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold">"Game changing"</text>
+  <text x="600" y="1540" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold">"Incredible ROI"</text>
+  <text x="900" y="1540" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="16" font-weight="bold">"Best platform"</text>
+  
+  <!-- Company Logos -->
+  <rect x="130" y="1790" width="940" height="80" fill="transparent"/>
+  <text x="600" y="1810" text-anchor="middle" fill="#64748b" font-family="Arial" font-size="16">Trusted by leading companies</text>
+  
+  <!-- Logo Placeholders -->
+  <rect x="200" y="1830" width="100" height="40" rx="5" fill="#e2e8f0"/>
+  <rect x="320" y="1830" width="100" height="40" rx="5" fill="#e2e8f0"/>
+  <rect x="440" y="1830" width="100" height="40" rx="5" fill="#e2e8f0"/>
+  <rect x="560" y="1830" width="100" height="40" rx="5" fill="#e2e8f0"/>
+  <rect x="680" y="1830" width="100" height="40" rx="5" fill="#e2e8f0"/>
+  <rect x="800" y="1830" width="100" height="40" rx="5" fill="#e2e8f0"/>
+  
+  <!-- CTA Section -->
+  <rect y="1910" width="1200" height="250" fill="#1e3a8a"/>
+  <text x="600" y="1980" text-anchor="middle" fill="white" font-family="Arial" font-size="36" font-weight="bold">Ready to Transform?</text>
+  <text x="600" y="2020" text-anchor="middle" fill="#93c5fd" font-family="Arial" font-size="18">Start your free 30-day trial today</text>
+  
+  <!-- CTA Buttons -->
+  <rect x="450" y="2050" width="150" height="45" rx="22" fill="white"/>
+  <rect x="620" y="2050" width="150" height="45" rx="22" fill="transparent" stroke="white" stroke-width="2"/>
+  
+  <text x="525" y="2077" text-anchor="middle" fill="#1e3a8a" font-family="Arial" font-size="14" font-weight="bold">Start Free Trial</text>
+  <text x="695" y="2077" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">Contact Sales</text>
+  
+  <!-- Footer -->
+  <rect y="2160" width="1200" height="240" fill="#0f172a"/>
+  <text x="600" y="2220" text-anchor="middle" fill="white" font-family="Arial" font-size="20" font-weight="bold">TechCorp Enterprise</text>
+  <text x="600" y="2250" text-anchor="middle" fill="#64748b" font-family="Arial" font-size="14">Powering digital transformation worldwide</text>
+  
+  <!-- Footer Links -->
+  <rect x="200" y="2280" width="800" height="40" fill="transparent"/>
+  <text x="300" y="2300" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">Privacy</text>
+  <text x="450" y="2300" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">Terms</text>
+  <text x="600" y="2300" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">Support</text>
+  <text x="750" y="2300" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">Documentation</text>
+  <text x="900" y="2300" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">API</text>
+  
+  <!-- Copyright -->
+  <text x="600" y="2360" text-anchor="middle" fill="#475569" font-family="Arial" font-size="11">© 2025 TechCorp. All rights reserved.</text>
+</svg>
