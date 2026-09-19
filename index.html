@@ -242,6 +242,193 @@
     .text-\[\#D4C8A8\] {
       color: #D4C8A8 !important;
     }
+
+    /* Mobile-First Responsive Design */
+    @media (max-width: 640px) {
+      main {
+        padding: 1rem !important;
+      }
+      
+      h1 {
+        font-size: 1.875rem !important;
+        line-height: 2.25rem !important;
+      }
+      
+      h2 {
+        font-size: 1.5rem !important;
+      }
+      
+      .grid {
+        gap: 1rem !important;
+      }
+      
+      .px-4, .px-6, .px-8 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+      
+      header .max-w-7xl {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+    }
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+      main {
+        padding: 1.5rem !important;
+      }
+      
+      h1 {
+        font-size: 2.25rem !important;
+      }
+      
+      h2 {
+        font-size: 1.875rem !important;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      main {
+        padding: 2rem !important;
+      }
+      
+      h1 {
+        font-size: 3rem !important;
+      }
+      
+      h2 {
+        font-size: 2rem !important;
+      }
+    }
+
+    /* Ensure sections don't overflow */
+    section {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* Responsive images */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Responsive grid for project cards */
+    .perspective-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .perspective-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .perspective-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Responsive 3D container */
+    #threejs-container-ANIMATION_6 {
+      min-height: 300px;
+    }
+
+    @media (min-width: 640px) {
+      #threejs-container-ANIMATION_6 {
+        min-height: 380px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      #threejs-container-ANIMATION_6 {
+        min-height: 440px;
+      }
+    }
+
+    /* Responsive form layout */
+    form {
+      width: 100%;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Touch-friendly buttons */
+    button, a.px-6.py-3 {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    @media (max-width: 640px) {
+      button, a.px-6.py-3, a.px-5.py-3 {
+        padding: 0.75rem 1.25rem !important;
+        font-size: 0.75rem !important;
+      }
+    }
+
+    /* Responsive nav */
+    header nav {
+      gap: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      header nav a {
+        padding: 0.25rem 0.5rem !important;
+        font-size: 0.625rem !important;
+      }
+    }
+
+    /* Responsive text sizing */
+    body {
+      font-size: 14px;
+    }
+
+    @media (min-width: 640px) {
+      body {
+        font-size: 16px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      body {
+        font-size: 16px;
+      }
+    }
+
+    /* Responsive spacing for sections */
+    section.space-y-12 {
+      gap: 2rem;
+    }
+
+    @media (max-width: 640px) {
+      section.space-y-12 {
+        gap: 1.5rem !important;
+      }
+    }
+
+    /* Better mobile card layout */
+    .bg-panel.border {
+      padding: 1rem !important;
+    }
+
+    @media (min-width: 640px) {
+      .bg-panel.border {
+        padding: 1.5rem !important;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .bg-panel.border {
+        padding: 2rem !important;
+      }
+    }
   </style>
 <script>
     // Custom element registry for <threejs-scene>
