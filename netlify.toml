@@ -93,7 +93,7 @@
   package = "netlify-plugin-submit-sitemap"
 
   [plugins.inputs]
-    baseUrl = "https://nehemiah-technologies.netlify.app"
+    baseUrl = "https://nehemiah.is-a.dev"
     sitemapPath = "/sitemap.xml"
     providers = [
       "google",
