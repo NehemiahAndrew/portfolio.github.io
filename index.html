@@ -531,16 +531,6 @@
       }
     }
 
-    /* Responsive form layout */
-    form {
-      width: 100%;
-    }
-
-    form input, form select, form textarea {
-      width: 100%;
-      box-sizing: border-box;
-    }
-
     /* Touch-friendly buttons */
     button, a.px-6.py-3 {
       min-height: 44px;
@@ -747,7 +737,7 @@
 <div class="flex flex-wrap items-center gap-3 font-mono text-xs text-tanMuted border-b border-panelBorder pb-4">
 <span class="px-2 py-0.5 bg-graphite border border-panelBorder text-manila">ROLE: FULL-STACK ENGINEER</span>
 <span>•</span>
-<span>FOCUS: TYPESCRIPT, REACT, NEXT.JS, NODE.JS, PYTHON</span>
+<span>FOCUS: FULL-STACK PRODUCT ENGINEERING</span>
 <span>•</span>
 <span class="text-crimson font-medium flex items-center gap-1.5">
 <span class="w-1.5 h-1.5 rounded-full bg-crimson animate-ping"></span>
@@ -760,7 +750,7 @@
 </h1>
 <!-- Subtext & Briefing -->
 <p class="font-sans text-[#D4C8A8] text-base sm:text-lg leading-relaxed max-w-2xl">
-              Full-Stack Software Engineer with hands-on experience shipping production systems: a Google Play app (Fit4Force), CRM integration platform, route-planning system, cybersecurity platform, and AI-powered automation tools. Proficient in TypeScript, React, Next.js, Node.js, Python, FastAPI, Flutter, and cloud databases. Founder of Nehemiah Technologies.
+              Full-Stack Software Engineer with hands-on experience shipping production systems: a Google Play app (Fit4Force), CRM integration platform, route-planning system, cybersecurity platform, and AI-powered automation tools. TypeScript-first across web, mobile, and backend - the full inventory lives in the tech arsenal below. Founder of Nehemiah Technologies.
             </p>
 <!-- Real Business Detail with Black Redaction Bar Slide Reveal -->
 <div class="p-4 bg-graphite border-l-2 border-crimson border-y border-r border-panelBorder font-mono text-xs space-y-1 relative group">
@@ -857,8 +847,7 @@
 <!-- Tactical HUD Coordinate Corners -->
 <div class="absolute top-3 left-3 font-mono text-[10px] text-tanMuted/60 z-20 pointer-events-none flex flex-col gap-0.5">
 <span class="text-crimson font-bold">[STACK-CH 01]</span>
-<span>FRONTEND: REACT / NEXT.JS / TYPESCRIPT</span>
-<span>BACKEND: NODE.JS / PYTHON / FASTAPI</span>
+<a class="hover:text-crimson transition-colors" href="#tech-arsenal">SEE TECH ARSENAL &darr;</a>
 </div>
 <div class="absolute top-3 right-3 font-mono text-[10px] text-tanMuted/60 z-20 pointer-events-none text-right flex flex-col gap-0.5">
 <span class="text-crimson font-bold">CAPABILITIES VERIFIED</span>
@@ -1078,22 +1067,18 @@ container._cleanup = function() {
 <div class="mt-6 pt-4 border-t border-panelBorder font-mono text-xs space-y-2">
 <div class="flex justify-between text-tanMuted">
 <span>PRIMARY STACK:</span>
-<span class="text-manila">TypeScript / React / Next.js</span>
+<span class="text-manila">TypeScript-led, end to end</span>
 </div>
 <div class="flex justify-between text-tanMuted">
-<span>BACKEND ENGINE:</span>
-<span class="text-manila">Node.js / Express / FastAPI</span>
-</div>
-<div class="flex justify-between text-tanMuted">
-<span>MOBILE PLATFORMS:</span>
-<span class="text-manila">Flutter, React Native</span>
+<span>FULL INVENTORY:</span>
+<a class="text-crimson hover:underline" href="#tech-arsenal">Active Tech Arsenal &rarr;</a>
 </div>
 </div>
 </div>
 <!-- Right: Evidence Tags & Clearance Progress Bars -->
 <div class="lg:col-span-7 space-y-6">
 <!-- Tech Stack as Evidence Tags with String-and-Eyelet detail -->
-<div class="bg-panel border border-panelBorder p-6 shadow-md">
+<div class="bg-panel border border-panelBorder p-6 shadow-md" id="tech-arsenal">
 <div class="font-mono text-xs text-tanMuted uppercase tracking-wider mb-4 flex items-center justify-between">
 <span>INVENTORY: ACTIVE TECH ARSENAL</span>
 <span class="text-[10px] text-crimson font-semibold flex items-center gap-1.5">
@@ -1197,7 +1182,7 @@ container._cleanup = function() {
               Nehemiah Technologies
             </h3>
 <p class="text-tanMuted text-sm leading-relaxed">
-              Founded to ship production-grade web, mobile, backend, and automation products. Shipped Fit4Force to Google Play (AI-powered exam prep), ReportCyber (crowdsourced cybersecurity platform), RouteLog Pro (route-planning system), CRM integrations, and AI automation pipelines. Leveraging TypeScript, React, Next.js, Node.js, Python, and cloud databases to deliver user-facing products.
+              Founded to ship production-grade web, mobile, backend, and automation products. Shipped Fit4Force to Google Play (AI-powered exam prep), ReportCyber (crowdsourced cybersecurity platform), RouteLog Pro (route-planning system), CRM integrations, and AI automation pipelines. TypeScript-led delivery across web, mobile, and backend - full inventory in the tech arsenal.
             </p>
 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2 font-mono text-xs">
 <div class="p-3 bg-graphite border border-panelBorder">
@@ -1478,7 +1463,7 @@ container._cleanup = function() {
 <!-- Part B: Featured Projects -->
 <div>
 <div class="flex items-center justify-between font-mono text-xs text-tanMuted uppercase tracking-wider mb-6">
-<span>SHIPPED PROJECTS // 8 PRODUCTION SYSTEMS</span>
+<span>SHIPPED PROJECTS // 9 PRODUCTION SYSTEMS</span>
 <span class="text-crimson flex items-center gap-1">
 <span class="w-1.5 h-1.5 rounded-full bg-crimson animate-ping"></span>
             [LIVE & DEPLOYED]
@@ -1642,16 +1627,35 @@ container._cleanup = function() {
 </div>
 </div>
 </div>
+<!-- Project 9: Northlight N1 -->
+<div class="group relative pt-4 cursor-pointer folder-3d-card">
+<div class="absolute top-0 left-0 px-3 py-1 bg-[#2e261b] border-t border-l border-r border-panelBorder rounded-t-sm font-mono text-[10px] text-manila font-bold tracking-wider manila-tab group-hover:bg-crimson group-hover:text-white transition-colors">PROJECT: NORTHLIGHT N1</div>
+<div class="bg-panel border border-panelBorder p-5 pt-6 shadow-md transition-colors group-hover:border-crimson">
+<div class="flex justify-between font-mono text-[11px] text-tanMuted mb-2">
+<span>CATEGORY: BRAND / PRODUCT STORY</span>
+<span class="text-manila font-bold">NEXT.JS</span>
+</div>
+<h4 class="font-headline text-base font-bold text-manila mb-1 group-hover:text-white"><a class="hover:text-crimson transition-colors" href="https://northlight-n1.vercel.app/" rel="noopener" target="_blank">Northlight N1: Camera Concept Site</a></h4>
+<p class="text-xs text-[#D4C8A8] mb-4">Design &amp; build for a fictional camera maker - four-chapter product narrative, exploded 3D model, spec breakdown, and a saved "photo walk" prompt builder with a downloadable brief.</p>
+<div class="pt-3 border-t border-panelBorder font-mono text-xs text-tanMuted space-y-0.5">
+<p><span class="text-crimson">Stack:</span> Next.js, Tailwind CSS, Three.js, Vercel</p>
+<p><span class="text-crimson">Role:</span> Website design &amp; build by Nehemiah Technologies</p>
+</div>
+<div class="mt-4 pt-1">
+<a class="inline-block w-full px-4 py-2.5 bg-crimson text-white text-center font-mono text-xs font-bold tracking-widest uppercase hover:bg-crimson/90 transition-all shadow-md hover:shadow-crimson/30 hover:-translate-y-0.5" href="https://northlight-n1.vercel.app/" rel="noopener" target="_blank">VISIT SITE ↗</a>
+</div>
+</div>
+</div>
 </div>
 </div>
 <!-- Part C: Contact Section -->
 <div class="bg-panel border border-panelBorder p-6 sm:p-10 shadow-2xl relative" id="contact">
 <div class="absolute -top-3 left-6 px-4 py-1 bg-[#2e261b] border-t border-l border-r border-panelBorder font-mono text-[10px] text-manila font-bold uppercase tracking-widest">
-          GET IN TOUCH // CONTACT FORM
+          GET IN TOUCH // DIRECT CONTACT
         </div>
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-<!-- Left: Contact Info -->
-<div class="lg:col-span-5 space-y-6">
+<!-- Contact Info -->
+<div class="lg:col-span-12 grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
 <div class="space-y-2">
 <span class="text-crimson font-mono text-xs font-bold uppercase tracking-widest">[DIRECT CONTACT]</span>
 <h3 class="font-headline text-2xl font-bold text-manila">
@@ -1703,48 +1707,6 @@ container._cleanup = function() {
 </a>
 </div>
 </div>
-</div>
-<!-- Right: Contact Form -->
-<div class="lg:col-span-7 bg-graphite border border-panelBorder p-6 sm:p-8">
-<div class="font-mono text-xs text-tanMuted uppercase tracking-wider border-b border-panelBorder pb-3 mb-6 flex justify-between items-center">
-<span>INQUIRY FORM</span>
-<span class="text-crimson">REQUIRED FIELDS *</span>
-</div>
-<form class="space-y-4" onsubmit="event.preventDefault(); alert('Message received! I will get back to you soon.');">
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div>
-<label class="block font-mono text-xs text-tanMuted mb-1.5 uppercase">YOUR NAME *</label>
-<input class="w-full bg-panel border border-panelBorder focus:border-crimson px-3 py-2.5 font-mono text-xs text-manila focus:outline-none placeholder-tanMuted/40 transition-colors" placeholder="e.g. Jane Doe" required="" type="text"/>
-</div>
-<div>
-<label class="block font-mono text-xs text-tanMuted mb-1.5 uppercase">YOUR EMAIL *</label>
-<input class="w-full bg-panel border border-panelBorder focus:border-crimson px-3 py-2.5 font-mono text-xs text-manila focus:outline-none placeholder-tanMuted/40 transition-colors" placeholder="jane@company.com" required="" type="email"/>
-</div>
-</div>
-<div>
-<label class="block font-mono text-xs text-tanMuted mb-1.5 uppercase">WHAT'S ON YOUR MIND? *</label>
-<select class="w-full bg-panel border border-panelBorder focus:border-crimson px-3 py-2.5 font-mono text-xs text-manila focus:outline-none transition-colors">
-<option>Hiring Inquiry / Full-Stack Role</option>
-<option>Project Collaboration</option>
-<option>Contract Work / Freelance</option>
-<option>Consultation / Advice</option>
-<option>General Inquiry</option>
-</select>
-</div>
-<div>
-<label class="block font-mono text-xs text-tanMuted mb-1.5 uppercase">MESSAGE *</label>
-<textarea class="w-full bg-panel border border-panelBorder focus:border-crimson px-3 py-2.5 font-mono text-xs text-manila focus:outline-none placeholder-tanMuted/40 transition-colors" placeholder="Tell me about your project, role, or idea..." required="" rows="4"></textarea>
-</div>
-<div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
-<div class="font-mono text-[10px] text-tanMuted/70">
-                  DIRECT TO EMAIL
-                </div>
-<button class="w-full sm:w-auto px-8 py-3 bg-crimson hover:bg-crimson/90 text-white font-mono text-xs font-bold tracking-widest uppercase transition-all shadow-lg hover:shadow-crimson/30 hover:-translate-y-0.5 flex items-center justify-center gap-2" type="submit">
-<span>SEND MESSAGE</span>
-<span>→</span>
-</button>
-</div>
-</form>
 </div>
 </div>
 </div>
